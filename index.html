@@ -1,407 +1,617 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WIS 品牌官網建置報價單</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<title>WIS 品牌官網建置報價單</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    body {
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #f5f5f5;
-      color: #111;
-      line-height: 1.8;
-      padding: 60px 20px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    .sheet {
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 80px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    }
+<style>
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 80px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 40px;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .brand {
-      font-size: 14px;
-      letter-spacing: 2px;
-      color: #777;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
+body{
+  font-family:'Noto Sans TC',sans-serif;
+  background:#f5f5f5;
+  color:#111;
+  line-height:1.8;
+  padding:60px 20px;
+}
 
-    h1 {
-      font-size: 42px;
-      line-height: 1.3;
-      font-weight: 700;
-    }
+.sheet{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
 
-    .date {
-      text-align: right;
-      color: #777;
-      font-size: 14px;
-      line-height: 1.8;
-    }
+  background:#fff;
 
-    .intro {
-      margin-bottom: 70px;
-    }
+  padding:72px;
 
-    .intro h2,
-    .section h2 {
-      font-size: 14px;
-      letter-spacing: 2px;
-      color: #888;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
+  box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
 
-    .intro p {
-      font-size: 16px;
-      color: #333;
-      max-width: 720px;
-    }
+/* top */
 
-    .section {
-      margin-bottom: 70px;
-    }
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
 
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
+  gap:40px;
 
-    .section-title span {
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: #999;
-    }
+  margin-bottom:70px;
+  padding-bottom:40px;
 
-    .line {
-      flex: 1;
-      height: 1px;
-      background: #ddd;
-    }
+  border-bottom:1px solid #ddd;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+.brand{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#777;
 
-    th {
-      text-align: left;
-      font-size: 13px;
-      color: #777;
-      font-weight: 500;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #ddd;
-    }
+  margin-bottom:10px;
 
-    td {
-      padding: 22px 0;
-      border-bottom: 1px solid #eee;
-      vertical-align: top;
-      font-size: 15px;
-    }
+  text-transform:uppercase;
+}
 
-    td:last-child,
-    th:last-child {
-      text-align: right;
-      white-space: nowrap;
-    }
+h1{
+  font-size:42px;
+  line-height:1.3;
+  font-weight:700;
+}
 
-    .small {
-      color: #777;
-      font-size: 14px;
-    }
+.date{
+  text-align:right;
 
-    .total-wrap {
-      margin-top: 90px;
-      padding-top: 40px;
-      border-top: 2px solid #111;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
+  color:#777;
+  font-size:14px;
+  line-height:1.8;
 
-    .total-label {
-      font-size: 14px;
-      letter-spacing: 3px;
-      color: #777;
-      margin-bottom: 12px;
-    }
+  white-space:nowrap;
+}
 
-    .total-price {
-      font-size: 52px;
-      font-weight: 700;
-      line-height: 1;
-    }
+/* intro */
 
-    .tax {
-      margin-top: 12px;
-      color: #888;
-      font-size: 13px;
-    }
+.intro{
+  margin-bottom:70px;
+  max-width:760px;
+}
 
-    .note {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 1px solid #ddd;
-    }
+.eyebrow{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#888;
 
-    .note h3 {
-      font-size: 14px;
-      letter-spacing: 2px;
-      color: #777;
-      margin-bottom: 18px;
-    }
+  margin-bottom:14px;
 
-    .note ul {
-      padding-left: 20px;
-      color: #444;
-    }
+  text-transform:uppercase;
+}
 
-    .note li {
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
+.intro p{
+  font-size:16px;
+  color:#333;
+}
 
-    @media screen and (max-width: 768px) {
-      .sheet {
-        padding: 40px 24px;
-      }
+/* total */
 
-      .top {
-        flex-direction: column;
-        gap: 30px;
-      }
+.total-box{
+  background:#111;
+  color:#fff;
 
-      h1 {
-        font-size: 30px;
-      }
+  padding:42px;
 
-      .total-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-      }
+  margin-bottom:70px;
+}
 
-      .total-price {
-        font-size: 38px;
-      }
+.total-label{
+  font-size:13px;
+  letter-spacing:2px;
 
-      table,
-      tbody,
-      tr,
-      td,
-      th {
-        display: block;
-        width: 100%;
-      }
+  color:rgba(255,255,255,.6);
 
-      th {
-        display: none;
-      }
+  margin-bottom:12px;
+}
 
-      tr {
-        padding: 20px 0;
-        border-bottom: 1px solid #eee;
-      }
+.total-price{
+  font-size:64px;
+  line-height:1;
+  font-weight:700;
 
-      td {
-        border: none;
-        padding: 4px 0;
-      }
+  letter-spacing:-2px;
 
-      td:last-child {
-        text-align: left;
-        font-weight: 700;
-        margin-top: 8px;
-      }
-    }
-  </style>
+  margin-bottom:14px;
+}
+
+.total-desc{
+  font-size:15px;
+  color:rgba(255,255,255,.8);
+}
+
+/* section */
+
+.section{
+  margin-bottom:70px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  margin-bottom:28px;
+}
+
+.section-title span{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#999;
+
+  white-space:nowrap;
+}
+
+.line{
+  flex:1;
+  height:1px;
+  background:#ddd;
+}
+
+/* table */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  text-align:left;
+
+  font-size:13px;
+  color:#777;
+  font-weight:500;
+
+  padding-bottom:16px;
+
+  border-bottom:1px solid #ddd;
+}
+
+td{
+  padding:20px 0;
+
+  border-bottom:1px solid #eee;
+
+  vertical-align:top;
+  font-size:15px;
+}
+
+td:last-child,
+th:last-child{
+  text-align:right;
+  white-space:nowrap;
+}
+
+.small{
+  color:#777;
+  font-size:14px;
+}
+
+/* list */
+
+.info-list{
+  padding-left:20px;
+}
+
+.info-list li{
+  margin-bottom:12px;
+  font-size:15px;
+  color:#444;
+}
+
+/* note */
+
+.note{
+  margin-top:80px;
+  padding-top:40px;
+
+  border-top:1px solid #ddd;
+}
+
+.note h3{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#777;
+
+  margin-bottom:18px;
+}
+
+/* mobile */
+
+@media screen and (max-width:768px){
+
+  body{
+    padding:24px 12px;
+  }
+
+  .sheet{
+    padding:40px 24px;
+  }
+
+  .top{
+    flex-direction:column;
+  }
+
+  .date{
+    text-align:left;
+  }
+
+  h1{
+    font-size:30px;
+  }
+
+  .total-price{
+    font-size:42px;
+  }
+
+  table,
+  tbody,
+  tr,
+  td,
+  th{
+    display:block;
+    width:100%;
+  }
+
+  th{
+    display:none;
+  }
+
+  tr{
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+  }
+
+  td{
+    border:none;
+    padding:4px 0;
+  }
+
+  td:last-child{
+    text-align:left;
+    font-weight:700;
+    margin-top:8px;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="sheet">
+<div class="sheet">
 
-    <div class="top">
-      <div>
-        <div class="brand">WIS DIGITAL BRAND PROJECT</div>
-        <h1>WIS 品牌官網建置報價單</h1>
+  <!-- top -->
+
+  <div class="top">
+
+    <div>
+
+      <div class="brand">
+        WIS DIGITAL BRAND PROJECT
       </div>
 
-      <div class="date">
-        Proposal by Ives<br>
-        2026
-      </div>
+      <h1>
+        WIS 品牌官網建置報價單
+      </h1>
+
     </div>
 
-    <div class="intro">
-      <h2>Project Overview</h2>
-      <p>
-        建立 WIS 品牌專屬數位形象網站，作為品牌形象、品牌故事與未來數位擴充之核心入口。
-        網站將以高質感 UI / UX、RWD 響應式設計與品牌體驗為核心進行規劃。
-      </p>
-    </div>
-
-    <div class="section">
-      <div class="section-title">
-        <span>01 WEBSITE STRUCTURE</span>
-        <div class="line"></div>
-      </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>項目</th>
-            <th>說明</th>
-            <th>金額</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>網站 Sitemap 規劃</td>
-            <td class="small">網站資訊架構、頁面動線與內容規劃</td>
-            <td>NT$10,000</td>
-          </tr>
-
-          <tr>
-            <td>UI / 視覺風格規劃</td>
-            <td class="small">品牌數位風格、配色、字體、版型規劃</td>
-            <td>NT$15,000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="section">
-      <div class="section-title">
-        <span>02 DESIGN & DEVELOPMENT</span>
-        <div class="line"></div>
-      </div>
-
-      <table>
-        <tbody>
-          <tr>
-            <td>首頁設計與建置</td>
-            <td class="small">品牌主視覺、Hero Banner、動態效果</td>
-            <td>NT$18,000</td>
-          </tr>
-
-          <tr>
-            <td>About 頁面</td>
-            <td class="small">品牌故事 / 關於我們</td>
-            <td>NT$6,000</td>
-          </tr>
-
-          <tr>
-            <td>Brand 頁面</td>
-            <td class="small">品牌介紹 / 系列內容</td>
-            <td>NT$6,000</td>
-          </tr>
-
-          <tr>
-            <td>Contact 頁面</td>
-            <td class="small">聯絡資訊 / 表單規劃</td>
-            <td>NT$5,000</td>
-          </tr>
-
-          <tr>
-            <td>RWD 響應式設計</td>
-            <td class="small">手機 / 平板 / 桌機版面優化</td>
-            <td>NT$10,000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="section">
-      <div class="section-title">
-        <span>03 DEPLOYMENT & SEO</span>
-        <div class="line"></div>
-      </div>
-
-      <table>
-        <tbody>
-          <tr>
-            <td>GitHub / Vercel 部署</td>
-            <td class="small">網站正式上線與版本管理</td>
-            <td>NT$5,000</td>
-          </tr>
-
-          <tr>
-            <td>網域綁定協助</td>
-            <td class="small">DNS / SSL 設定協助</td>
-            <td>NT$3,000</td>
-          </tr>
-
-          <tr>
-            <td>基礎 SEO 設定</td>
-            <td class="small">Meta Title、Description、OG 設定</td>
-            <td>NT$5,000</td>
-          </tr>
-
-          <tr>
-            <td>Google Analytics 串接</td>
-            <td class="small">GA4 基礎追蹤設定與埋碼</td>
-            <td>NT$8,000</td>
-          </tr>
-
-          <tr>
-            <td>多語系功能規劃</td>
-            <td class="small">中 / 英文頁面切換與架構規劃</td>
-            <td>NT$12,000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="total-wrap">
-      <div>
-        <div class="total-label">PROJECT TOTAL</div>
-        <div class="tax">未稅價格</div>
-      </div>
-
-      <div class="total-price">NT$132,000</div>
-    </div>
-
-    <div class="note">
-      <h3>NOTES</h3>
-
-      <ul>
-        <li>本網站將採 GitHub + Vercel 方式部署。</li>
-        <li>網站原始碼將以 Private Repository 管理。</li>
-        <li>修改次數：首頁與內頁各含 2 次修改。</li>
-        <li>不包含會員、購物車、金流、CMS 與電商平台建置。</li>
-        <li>後續若需導入商城功能，可另行評估 91APP / Shopify 等平台整合。</li>
-      </ul>
+    <div class="date">
+      Proposal by Ives<br>
+      2026
     </div>
 
   </div>
+
+  <!-- intro -->
+
+  <div class="intro">
+
+    <div class="eyebrow">
+      PROJECT OVERVIEW
+    </div>
+
+    <p>
+      建立 WIS 品牌專屬數位形象網站，作為品牌形象、品牌故事、品牌內容與未來數位擴充之核心入口。
+      網站以品牌視覺體驗、RWD 響應式設計與高質感前端呈現為核心，後續可依需求延伸電商平台或會員功能。
+    </p>
+
+  </div>
+
+  <!-- total -->
+
+  <div class="total-box">
+
+    <div class="total-label">
+      PROJECT TOTAL
+    </div>
+
+    <div class="total-price">
+      NT$100,000
+    </div>
+
+    <div class="total-desc">
+      未稅價格｜品牌官網方案
+    </div>
+
+  </div>
+
+  <!-- section -->
+
+  <div class="section">
+
+    <div class="section-title">
+      <span>01 WEBSITE STRUCTURE</span>
+      <div class="line"></div>
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>說明</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>網站 Sitemap 規劃</td>
+          <td class="small">網站資訊架構、頁面動線與內容規劃</td>
+          <td>NT$10,000</td>
+        </tr>
+
+        <tr>
+          <td>UI / 視覺風格規劃</td>
+          <td class="small">品牌數位風格、配色、字體、版型規劃</td>
+          <td>NT$15,000</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <!-- section -->
+
+  <div class="section">
+
+    <div class="section-title">
+      <span>02 DESIGN & DEVELOPMENT</span>
+      <div class="line"></div>
+    </div>
+
+    <table>
+
+      <tbody>
+
+        <tr>
+          <td>首頁設計與建置</td>
+          <td class="small">品牌主視覺、Hero Banner、動態效果</td>
+          <td>NT$15,000</td>
+        </tr>
+
+        <tr>
+          <td>About 頁面</td>
+          <td class="small">品牌故事 / 關於我們</td>
+          <td>NT$6,000</td>
+        </tr>
+
+        <tr>
+          <td>Brand 頁面</td>
+          <td class="small">品牌介紹 / 系列內容</td>
+          <td>NT$6,000</td>
+        </tr>
+
+        <tr>
+          <td>Contact 頁面</td>
+          <td class="small">聯絡資訊 / 表單規劃</td>
+          <td>NT$5,000</td>
+        </tr>
+
+        <tr>
+          <td>RWD 響應式設計</td>
+          <td class="small">手機 / 平板 / 桌機版面優化</td>
+          <td>NT$10,000</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <!-- section -->
+
+  <div class="section">
+
+    <div class="section-title">
+      <span>03 DEPLOYMENT & SEO</span>
+      <div class="line"></div>
+    </div>
+
+    <table>
+
+      <tbody>
+
+        <tr>
+          <td>GitHub / Vercel 部署</td>
+          <td class="small">網站正式上線與版本管理</td>
+          <td>NT$5,000</td>
+        </tr>
+
+        <tr>
+          <td>網域綁定協助</td>
+          <td class="small">DNS / SSL 設定協助</td>
+          <td>NT$3,000</td>
+        </tr>
+
+        <tr>
+          <td>基礎 SEO 設定</td>
+          <td class="small">Meta Title、Description、OG 設定</td>
+          <td>NT$5,000</td>
+        </tr>
+
+        <tr>
+          <td>Google Analytics 串接</td>
+          <td class="small">GA4 基礎追蹤設定與埋碼</td>
+          <td>NT$8,000</td>
+        </tr>
+
+        <tr>
+          <td>多語系功能規劃</td>
+          <td class="small">中 / 英文頁面切換與架構規劃</td>
+          <td>NT$12,000</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <!-- section -->
+
+  <div class="section">
+
+    <div class="section-title">
+      <span>04 PROJECT TIMELINE</span>
+      <div class="line"></div>
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>階段</th>
+          <th>時程</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>網站風格與架構確認</td>
+          <td>3–5 工作天</td>
+        </tr>
+
+        <tr>
+          <td>首頁設計與確認</td>
+          <td>5–7 工作天</td>
+        </tr>
+
+        <tr>
+          <td>內頁設計與前端建置</td>
+          <td>7–14 工作天</td>
+        </tr>
+
+        <tr>
+          <td>RWD / 上線測試</td>
+          <td>3–5 工作天</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- section -->
+
+  <div class="section">
+
+    <div class="section-title">
+      <span>05 MAINTENANCE PLAN</span>
+      <div class="line"></div>
+    </div>
+
+    <table>
+
+      <tbody>
+
+        <tr>
+          <td>月維護方案</td>
+          <td class="small">文字修改、圖片替換、小幅內容更新</td>
+          <td>NT$3,000/ 月</td>
+        </tr>
+
+        <tr>
+          <td>年度維護方案</td>
+          <td class="small">基礎維護與技術協助</td>
+          <td>NT$33,000 / 年</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <!-- note -->
+
+  <div class="note">
+
+    <h3>
+      NOTES
+    </h3>
+
+    <ul class="info-list">
+
+      <li>首頁與內頁各含 2 次修改。</li>
+
+      <li>
+        不包含會員系統、購物車、金流串接、訂單系統、庫存系統、發票系統、
+        後台 CMS 開發、API 串接與電商平台建置。
+      </li>
+
+      <li>
+        多語系內容翻譯需由客戶提供。
+      </li>
+
+      <li>
+        本網站將採 GitHub + Vercel 方式部署。
+      </li>
+
+      <li>
+        網站原始碼將以 Private Repository 管理。
+      </li>
+
+      <li>
+        SSL 憑證可依實際 Hosting 方案評估。
+      </li>
+
+      <li>
+        後續若延伸品牌商城，可與 Shopify、91APP、Cyberbiz 等平台進行串接與導流整合。
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
 
 </body>
 </html>
