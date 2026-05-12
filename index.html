@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIS 品牌官網建置報價單</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      line-height: 1.8;
+      padding: 60px 20px;
+    }
+
+    .sheet {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 80px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 80px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 40px;
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .date {
+      text-align: right;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .intro {
+      margin-bottom: 70px;
+    }
+
+    .intro h2,
+    .section h2 {
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #333;
+      max-width: 720px;
+    }
+
+    .section {
+      margin-bottom: 70px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .section-title span {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #999;
+    }
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      font-size: 13px;
+      color: #777;
+      font-weight: 500;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td {
+      padding: 22px 0;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+      font-size: 15px;
+    }
+
+    td:last-child,
+    th:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .small {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .total-wrap {
+      margin-top: 90px;
+      padding-top: 40px;
+      border-top: 2px solid #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .total-label {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .total-price {
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .tax {
+      margin-top: 12px;
+      color: #888;
+      font-size: 13px;
+    }
+
+    .note {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    .note h3 {
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #777;
+      margin-bottom: 18px;
+    }
+
+    .note ul {
+      padding-left: 20px;
+      color: #444;
+    }
+
+    .note li {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sheet {
+        padding: 40px 24px;
+      }
+
+      .top {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .total-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .total-price {
+        font-size: 38px;
+      }
+
+      table,
+      tbody,
+      tr,
+      td,
+      th {
+        display: block;
+        width: 100%;
+      }
+
+      th {
+        display: none;
+      }
+
+      tr {
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      td {
+        border: none;
+        padding: 4px 0;
+      }
+
+      td:last-child {
+        text-align: left;
+        font-weight: 700;
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sheet">
+
+    <div class="top">
+      <div>
+        <div class="brand">WIS DIGITAL BRAND PROJECT</div>
+        <h1>WIS 品牌官網建置報價單</h1>
+      </div>
+
+      <div class="date">
+        Proposal by Ives<br>
+        2026
+      </div>
+    </div>
+
+    <div class="intro">
+      <h2>Project Overview</h2>
+      <p>
+        建立 WIS 品牌專屬數位形象網站，作為品牌形象、品牌故事與未來數位擴充之核心入口。
+        網站將以高質感 UI / UX、RWD 響應式設計與品牌體驗為核心進行規劃。
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <span>01 WEBSITE STRUCTURE</span>
+        <div class="line"></div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>說明</th>
+            <th>金額</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>網站 Sitemap 規劃</td>
+            <td class="small">網站資訊架構、頁面動線與內容規劃</td>
+            <td>NT$10,000</td>
+          </tr>
+
+          <tr>
+            <td>UI / 視覺風格規劃</td>
+            <td class="small">品牌數位風格、配色、字體、版型規劃</td>
+            <td>NT$15,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <span>02 DESIGN & DEVELOPMENT</span>
+        <div class="line"></div>
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>首頁設計與建置</td>
+            <td class="small">品牌主視覺、Hero Banner、動態效果</td>
+            <td>NT$18,000</td>
+          </tr>
+
+          <tr>
+            <td>About 頁面</td>
+            <td class="small">品牌故事 / 關於我們</td>
+            <td>NT$6,000</td>
+          </tr>
+
+          <tr>
+            <td>Brand 頁面</td>
+            <td class="small">品牌介紹 / 系列內容</td>
+            <td>NT$6,000</td>
+          </tr>
+
+          <tr>
+            <td>Contact 頁面</td>
+            <td class="small">聯絡資訊 / 表單規劃</td>
+            <td>NT$5,000</td>
+          </tr>
+
+          <tr>
+            <td>RWD 響應式設計</td>
+            <td class="small">手機 / 平板 / 桌機版面優化</td>
+            <td>NT$10,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <span>03 DEPLOYMENT & SEO</span>
+        <div class="line"></div>
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>GitHub / Vercel 部署</td>
+            <td class="small">網站正式上線與版本管理</td>
+            <td>NT$5,000</td>
+          </tr>
+
+          <tr>
+            <td>網域綁定協助</td>
+            <td class="small">DNS / SSL 設定協助</td>
+            <td>NT$3,000</td>
+          </tr>
+
+          <tr>
+            <td>基礎 SEO 設定</td>
+            <td class="small">Meta Title、Description、OG 設定</td>
+            <td>NT$5,000</td>
+          </tr>
+
+          <tr>
+            <td>Google Analytics 串接</td>
+            <td class="small">GA4 基礎追蹤設定與埋碼</td>
+            <td>NT$8,000</td>
+          </tr>
+
+          <tr>
+            <td>多語系功能規劃</td>
+            <td class="small">中 / 英文頁面切換與架構規劃</td>
+            <td>NT$12,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="total-wrap">
+      <div>
+        <div class="total-label">PROJECT TOTAL</div>
+        <div class="tax">未稅價格</div>
+      </div>
+
+      <div class="total-price">NT$132,000</div>
+    </div>
+
+    <div class="note">
+      <h3>NOTES</h3>
+
+      <ul>
+        <li>本網站將採 GitHub + Vercel 方式部署。</li>
+        <li>網站原始碼將以 Private Repository 管理。</li>
+        <li>修改次數：首頁與內頁各含 2 次修改。</li>
+        <li>不包含會員、購物車、金流、CMS 與電商平台建置。</li>
+        <li>後續若需導入商城功能，可另行評估 91APP / Shopify 等平台整合。</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
